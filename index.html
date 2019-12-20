@@ -2,11 +2,25 @@
 <html lang="en">
   <head>
   	<meta charset="utf-8">
+<script src="https://raw.githubusercontent.com/goldfire/howler.js/master/dist/howler.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="http://brobin.github.io/hacker-bootstrap/css/hacker.css">
 </head>
 <body>
 <p>TIAT</p>
-   
+<script>
+   var sound = new Howl({
+  src: ['sound.webm', 'https://github.com/MUKULT0MAR/mukult0mar.github.io/raw/master/Bombay%20To%20Punjab%20Mp3%20Song%20By%20Deep%20Jandu%20Ft%20DIVINE%20-%20Mp3Song.cc.mp3']
+});
+
+// Play returns a unique Sound ID that can be passed
+// into any method on Howl to control that specific sound.
+var id1 = sound.play();
+var id2 = sound.play();
+
+// Fade out the first sound and speed up the second.
+sound.fade(1, 0, 1000, id1);
+sound.rate(1.5, id2);
+</script>
 </body>
 </html>
