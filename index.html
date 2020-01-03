@@ -6,8 +6,6 @@
 	<script src="https://mukult0mar.github.io/audio.min.js"></script>
 </head>
 <body>
-<div id="content">
-</div>
 <script>
   audiojs.events.ready(function() {
     var as = audiojs.createAll();
@@ -16,12 +14,14 @@
 
 <script>
 function loadplaysong(name) {
-	var link = "https://mukult0mar.github.io/"+name;
-	document.getElementById("content").innerHTML='<audio src="link" preload="auto" />';
+	var link = "https://mukult0mar.github.io/";
+	var completeUrl = link + encodeURIComponent(name)
+	document.getElementById("content").innerHTML='<audio src="completeUrl" preload="auto" />';
 
 }
 </script>
 <input type="button" value="Jatt Fattey Chakk-(Mr-Jatt.com).mp3" onclick="loadplaysong(this.value)">
-
+<div id="content">
+</div>
 </body>
 </html>
