@@ -16,7 +16,8 @@
 function loadplaysong(name) {
 	var link = "https://mukult0mar.github.io/";
 	var completeUrl = link + encodeURIComponent(name);
-	document.getElementById("content").innerHTML='<audio src="completeUrl" preload="auto" />';
+	var data = '<audio src="' + completeUrl + '" preload="auto" />';
+	document.getElementById("content").innerHTML='data';
 
 }
 </script>
