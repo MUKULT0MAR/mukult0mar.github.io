@@ -1,20 +1,46 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="http://brobin.github.io/hacker-bootstrap/css/hacker.css">
-	<script src="http://kolber.github.io/audiojs/audiojs/audio.min.js"></script>
+<html >
+  <head>
+    <meta charset="UTF-8">
+    <title>Audio player HTML5</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 
-</head>
-<body>
-<div id="player">
-<script>
-  audiojs.events.ready(function() {
-    var as = audiojs.createAll();
-  });
-</script>
-	<audio src="mukult0mar.github.io/Snoop%20Dogg%20-%20Do%20It%20When%20I'm%20In%20It%20(feat%20Jermaine%20Dupri%2C%20Ozuna%20%26%20Slim%20Jxmmi).mp3" preload="auto" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://likev.github.io/html5-audio-player/css/AudioPlayer.css">
+    <style>
 
-	</div>
-</body>
+    #player{
+        position: relative;
+        max-width: 700px;
+        height: 500px;
+        border: solid 1px gray;
+    }
+    </style>
+  </head>
+
+  <body>
+      <!-- Audio player container-->
+     <div id='player'></div>
+
+    <!-- Audio player js begin-->
+    <script src="https://likev.github.io/html5-audio-player/js/AudioPlayer.js"></script>
+
+    <script>
+        // test image for web notifications
+        var iconImage = null;
+
+        AP.init({
+            container:'#player',//a string containing one CSS selector
+            volume   : 0.7,
+            autoPlay : true,
+            notification: false,
+            playList: [
+                {'icon': iconImage, 'title': 'Do it when I am in! Snoop Dogg', 'file': 'mukult0mar.github.io/Snoop%20Dogg%20-%20Do%20It%20When%20I'm%20In%20It%20(feat%20Jermaine%20Dupri%2C%20Ozuna%20%26%20Slim%20Jxmmi).mp3'},
+                {'icon': iconImage, 'title': 'Jatt Fatt Chk', 'file': 'mukult0mar.github.io/Jatt%20Fattey%20Chakk-(Mr-Jatt.com).mp3'}
+          ]
+        });
+    </script>
+    <!-- Audio player js end-->
+
+  </body>
 </html>
