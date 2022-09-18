@@ -3,12 +3,46 @@
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="http://brobin.github.io/hacker-bootstrap/css/hacker.css">
-	<script src="http://kolber.github.io/audiojs/audiojs/audio.js"></script>
-	<script src="http://kolber.github.io/audiojs/demos/jquery.js"></script>
 </head>
 <body>
 <div>
 <p>Hello World</p>
+<div id="pane">
+	<div id="title">&nbsp;Hello World!
+	<span style="float: right;"><a href="#" onclick="show();" class="btn btn-warning">_</a><a onclick="LoadResponse('', 'pane'); LoadResponse('', 'pane')" class="btn btn-danger">X</a></span>
+</div>
+</div>
+<div id="ghostpane"></div>
+<script src="windows.js"></script>
+<ul id = "bbar" class="pagination pagination-lg">
+	<li class="active"><a href="#" onclick="hide();">1</a></li>
+	<li><a href="#">2</a></li>
+</ul>
+<script type="text/javascript">
+	function show(){
+		document.getElementById("pane").style.visibility = 'hidden';
+	}
+	function hide(){
+		document.getElementById("pane").style.visibility = 'visible';
+	}
+	function LoadResponse(response,control)
+{
+    var container = document.getElementById(control);
+    try
+    {
+        while(container.firstChild)
+            container.removeChild(container.firstChild);
+        var t = document.createElement('div');
+        t.innerHTML = response;
+        container.appendChild(t);
+        container.empty();
+    }
+    catch(ex)
+    {
+        container.innerHTML = response;
+    }
+}
+</script>
 </div>
 </body>
 </html>
